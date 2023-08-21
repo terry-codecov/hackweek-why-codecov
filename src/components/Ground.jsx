@@ -2,7 +2,7 @@ import { useControls } from "leva";
 
 function Ground() {
   const { color, position, rotation, args } = useControls("ground", {
-    color: "#9999ce",
+    color: "#00A5A8",
     position: {
       value: {
         x: 0,
