@@ -5,7 +5,7 @@ import { Perf } from "r3f-perf";
 
 import { Canvas, useFrame } from "@react-three/fiber";
 
-import { Model as Flamingo } from "./components/Flamingo";
+import { Model as Umbrella } from "./components/Umbrella";
 
 function Box({ name = "box", ...props }) {
   // This reference will give us direct access to the mesh
@@ -63,8 +63,18 @@ function Box({ name = "box", ...props }) {
 }
 
 function App() {
-  const { perfVisible } = useControls({
+  const { perfVisible, position } = useControls({
     perfVisible: false,
+    umbrella: folder({
+      position: {
+        value: {
+          x: -2.2,
+          y: -4,
+          z: 0,
+        },
+        step: 0.05,
+      },
+    }),
   });
 
   return (
@@ -73,7 +83,11 @@ function App() {
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
       <Suspense fallback={null}>
-        <Flamingo scale="0.05" rotation={[0, 5.5, 0]} position={[0, -2, -5]} />
+        <Umbrella
+          scale="5"
+          rotation={[0, 5.5, 0]}
+          position={[position.x, position.y, position.z]}
+        />
       </Suspense>
       <Box name="box1" position={[-1.2, 0, 0]} />
       <Box name="box2" position={[1.2, 0, 0]} />
