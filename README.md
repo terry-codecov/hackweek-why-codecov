@@ -10,7 +10,9 @@ Currently, two official plugins are available:
 ### Asset handoff instructions
 
 One time setup:
-`npm install -g gltf-pipeline`
+
+- `npm install -g gltf-pipeline`
+- Make a .raw folder in the root of the directory
 
 1. Receive `.gltf` files from Cassie.
 2. Place all files into .raw folder in the root of the project
