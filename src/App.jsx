@@ -1,6 +1,7 @@
 import { useState, Suspense } from "react";
 import { useRef } from "react";
 import { useControls, folder } from "leva";
+import { Perf } from "r3f-perf";
 
 import { Canvas, useFrame } from "@react-three/fiber";
 
@@ -62,8 +63,13 @@ function Box({ name = "box", ...props }) {
 }
 
 function App() {
+  const { perfVisible } = useControls({
+    perfVisible: false,
+  });
+
   return (
     <Canvas>
+      {perfVisible && <Perf position="top-left" />}
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
       <Suspense fallback={null}>
