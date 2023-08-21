@@ -1,11 +1,12 @@
-import { useState, Suspense } from "react";
-import { useRef } from "react";
+import { useRef, useState, Suspense } from "react";
 import { useControls, folder } from "leva";
 import { Perf } from "r3f-perf";
 
 import { Canvas, useFrame } from "@react-three/fiber";
+import { MapControls } from "@react-three/drei";
 
 import { Model as Umbrella } from "./components/Umbrella";
+import { Ground } from "./components/Ground";
 
 function Box({ name = "box", ...props }) {
   // This reference will give us direct access to the mesh
@@ -62,6 +63,19 @@ function Box({ name = "box", ...props }) {
   );
 }
 
+function Lights() {
+  return (
+    <>
+      <MapControls />
+      <color attach="background" args={["skyblue"]} />
+      <fog attach="fog" args={["skyblue", 0.002, 1000]} />
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[1, 2, 3]} intensity={1.5} />
+      <directionalLight position={[3, 2, 3]} intensity={1.5} />
+    </>
+  );
+}
+
 function App() {
   const { perfVisible, position } = useControls({
     perfVisible: false,
@@ -78,10 +92,9 @@ function App() {
   });
 
   return (
-    <Canvas>
+    <Canvas camera={{ position: [50, 25, 0] }}>
       {perfVisible && <Perf position="top-left" />}
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
+      <Lights />
       <Suspense fallback={null}>
         <Umbrella
           scale="5"
@@ -89,8 +102,9 @@ function App() {
           position={[position.x, position.y, position.z]}
         />
       </Suspense>
-      <Box name="box1" position={[-1.2, 0, 0]} />
-      <Box name="box2" position={[1.2, 0, 0]} />
+      <Box name="box1" position={[10, 0, 0]} />
+      <Box name="box2" position={[-10, 0, 0]} />
+      <Ground />
     </Canvas>
   );
 }
