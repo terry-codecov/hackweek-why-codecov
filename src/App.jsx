@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useRef } from "react";
 import "./App.css";
 
 import { Canvas, useFrame } from "@react-three/fiber";
+
+import { Model as Flamingo } from "./components/Flamingo";
 
 function Box(props) {
   // This reference will give us direct access to the mesh
@@ -35,6 +37,9 @@ function App() {
       <pointLight position={[10, 10, 10]} />
       <Box position={[-1.2, 0, 0]} />
       <Box position={[1.2, 0, 0]} />
+      <Suspense fallback={null}>
+        <Flamingo scale="0.05" rotation={[0, 5.5, 0]} position={[0, -2, -5]} />
+      </Suspense>
     </Canvas>
   );
 }
