@@ -1,41 +1,40 @@
 import { useControls } from "leva";
+// import { Wireframe } from "@react-three/drei";
+import React from "react";
 
-function Ground() {
-  const { color, position, rotation, args } = useControls("ground", {
-    color: "#00A5A8",
-    position: {
-      value: {
-        x: 0,
-        y: -5,
-        z: 0,
+function Ground({ onClick }) {
+  const { scale, color, position, rotation, size, radius, maxAge } =
+    useControls("waves", {
+      color: "#00A5A8",
+      scale: 1,
+      position: {
+        value: {
+          x: 0,
+          y: -5,
+          z: 0,
+        },
+        step: 0.05,
       },
-      step: 0.05,
-    },
-    rotation: {
-      value: {
-        x: 359.7,
-        y: 0,
-        z: 0,
+      rotation: {
+        value: {
+          x: -Math.PI * 0.5,
+          y: 0,
+          z: Math.PI * 0.5,
+        },
+        step: 0.05,
       },
-      step: 0.05,
-    },
-    args: {
-      value: {
-        x: 100,
-        y: 100,
-        z: 0.5,
-      },
-      step: 0.05,
-    },
-  });
+    });
 
   return (
     <mesh
+      scale={scale}
+      onClick={onClick}
       position={[position.x, position.y, position.z]}
       rotation={[rotation.x, rotation.y, rotation.z]}
     >
-      <boxGeometry args={[args.x, args.y, args.z]} />
-      <meshStandardMaterial color={color} />
+      <planeGeometry args={[500, 500, 1, 1]} />
+      <meshBasicMaterial color={color} />
+      {/* <Wireframe stroke="white" squeeze dash /> */}
     </mesh>
   );
 }
