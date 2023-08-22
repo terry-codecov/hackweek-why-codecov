@@ -15,4 +15,14 @@ type Entity = {
 
 const world = new World<Entity>();
 
+/* Create functions that perform actions on entities: */
+export function position(
+  entity: With<Entity, "position">,
+  position: { x: number; y: number; z: number }
+) {
+  entity.position.x = position.x;
+  entity.position.y = position.y;
+  entity.position.z = position.z;
+}
+
 export const ECS = createReactAPI(world);

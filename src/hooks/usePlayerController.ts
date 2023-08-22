@@ -4,11 +4,12 @@ import { subscribe, proxy } from "valtio";
 
 import { ECS } from "../state";
 import { useEffect } from "react";
+import { useFrame } from "@react-three/fiber";
 
 const playerEntities = ECS.world.with("position", "velocity", "active");
 const moveToTargetEntities = ECS.world.with("position", "moveToTarget");
 
-const manager = proxy(new EntityManager());
+const manager = new EntityManager();
 
 function usePlayerController() {
   const [player] = useEntities(playerEntities);
@@ -23,7 +24,6 @@ function usePlayerController() {
         player.position.y,
         player.position.z
       );
-      console.log(target.position);
       // vehicle.setRenderComponent(player.sceneObject?.current);
       const targetGameEntity = new GameEntity();
       targetGameEntity.name = "Target";
@@ -40,8 +40,8 @@ function usePlayerController() {
     }
   }, [player, target]);
 
-  useEffect(() => {
-    console.log(target?.position);
+  useFrame((state, delta) => {
+    if (manager.entities.length < 2) return;
     const vehicle = manager.entities.find((item) => item.name === "Vehicle");
     const targetGameEntity = manager.entities.find(
       (item) => item.name === "Target"
@@ -56,11 +56,15 @@ function usePlayerController() {
     if (targetGameEntity?.position && vehicle) {
       const seekBehavior = new SeekBehavior(targetGameEntity.position);
 
+      // console.log(vehicle);
+
       // if (vehicle && target) {
       //   vehicle.steering.add(seekBehavior);
       // }
     }
-  }, [target?.position?.x, target?.position?.y, target?.position?.z]);
+
+    manager.update(delta);
+  });
 
   return null;
 }

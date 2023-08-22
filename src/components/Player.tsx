@@ -5,8 +5,7 @@ import { Suspense } from "react";
 import { ECS } from "../state";
 import { Model as Umbrella } from "./Umbrella";
 
-import { useEntities } from "miniplex-react";
-import { usePlayerController } from "../hooks/usePlayerController";
+// import { usePlayerController } from "../hooks/usePlayerController";
 
 const Player = () => {
   const ref = React.useRef(89);
@@ -23,7 +22,7 @@ const Player = () => {
     }),
   });
 
-  usePlayerController();
+  // usePlayerController();
 
   return (
     <Suspense fallback={null}>
