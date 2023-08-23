@@ -6,22 +6,22 @@ import { Player } from "./components/Player";
 import { Ground } from "./components/Ground";
 import { MovementSystem } from "./components/MovementSystem";
 import { MoveToTarget } from "./components/MoveToTarget";
-import { ECS, position } from "./state";
+import { ECS, position, moveTo } from "./state";
 
 const moveToTargetEntities = ECS.world.with("position", "moveToTarget");
+const playerEntities = ECS.world.with("position", "velocity");
 
 function useSetBoatTarget() {
   const [targetPosition, setTargetPosition] = useState({ x: 0, y: 0, z: 0 });
   const [moveToTarget] = useEntities(moveToTargetEntities);
+  const [player] = useEntities(playerEntities);
 
   useFrame((state, delta) => {
     if (moveToTarget.sceneObject.current) {
-      moveToTarget.sceneObject.current.position.x = targetPosition.x;
-      moveToTarget.sceneObject.current.position.y =
-        targetPosition.y + moveToTarget.sceneObject.current.scale.y;
-      moveToTarget.sceneObject.current.position.z = targetPosition.z;
-
-      position(moveToTarget, targetPosition);
+      position(moveToTarget.sceneObject.current, targetPosition);
+    }
+    if (player?.sceneObject?.current) {
+      moveTo(player.sceneObject.current, moveToTarget.sceneObject.current);
     }
   });
 

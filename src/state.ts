@@ -21,8 +21,24 @@ export function position(
   position: { x: number; y: number; z: number }
 ) {
   entity.position.x = position.x;
-  entity.position.y = position.y;
+  entity.position.y = position.y + entity.scale.y;
   entity.position.z = position.z;
+}
+
+function lerp(a, b, t) {
+  return a + (b - a) * t;
+}
+
+export function moveTo(
+  entity: With<Entity, "position", "velocity">,
+  target: With<Entity, "position">
+) {
+  const newX = lerp(entity.position.x, target.position.x, 0.05);
+  const newY = lerp(entity.position.y, target.position.y, 0.05);
+  const newZ = lerp(entity.position.z, target.position.z, 0.05);
+  entity.position.x = newX;
+  entity.position.y = newY;
+  entity.position.z = newZ;
 }
 
 export const ECS = createReactAPI(world);
