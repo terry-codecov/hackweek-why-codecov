@@ -5,6 +5,7 @@ import { Ref } from "react";
 
 type Entity = {
   sceneObject?: Ref<Object3D>;
+  rigid?: Ref<Object3D>;
   position: { x: number; y: number; z: number };
   velocity?: { x: number; y: number; z: number };
   paused?: boolean;
@@ -31,14 +32,20 @@ function lerp(a, b, t) {
 
 export function moveTo(
   entity: With<Entity, "position", "velocity">,
-  target: With<Entity, "position">
+  targetRef: With<Entity, "position">,
+  force = 5000
 ) {
-  const newX = lerp(entity.position.x, target.position.x, 0.05);
-  const newY = lerp(entity.position.y, target.position.y, 0.05);
-  const newZ = lerp(entity.position.z, target.position.z, 0.05);
-  entity.position.x = newX;
-  entity.position.y = newY;
-  entity.position.z = newZ;
+  const newX =
+    lerp(entity.sceneObject.current.position.x, targetRef.position.x, 0.05) *
+    force;
+  const newY =
+    lerp(entity.sceneObject.current.position.y, targetRef.position.y, 0.05) *
+    force;
+  const newZ =
+    lerp(entity.sceneObject.current.position.z, targetRef.position.z, 0.05) *
+    force;
+
+  entity.rigid.current?.applyImpulse({ x: newX, y: newY, z: newZ }, true);
 }
 
 export const ECS = createReactAPI(world);

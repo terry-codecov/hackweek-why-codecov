@@ -1,5 +1,6 @@
 import * as React from "react";
 import { ECS } from "../state";
+import { CuboidCollider } from "@react-three/rapier";
 
 const MoveToTarget = () => {
   const ref = React.useRef<THREE.Object3D>();
@@ -11,8 +12,14 @@ const MoveToTarget = () => {
       <ECS.Component name="moveToTarget" data={true} />
       <ECS.Component name="sceneObject" data={ref}>
         <mesh ref={ref}>
-          <sphereGeometry />
-          <meshStandardMaterial color="hotpink" />
+          <CuboidCollider
+            sensor
+            position={[10, 0, 35]}
+            args={[10, 5, 20]}
+            onIntersectionEnter={() => {
+              console.log("destination reached");
+            }}
+          />
         </mesh>
       </ECS.Component>
     </ECS.Entity>
