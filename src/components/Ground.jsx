@@ -1,6 +1,8 @@
 import { useControls } from "leva";
 // import { Wireframe } from "@react-three/drei";
 import React from "react";
+import { NodeToyMaterial, NodeToyTick } from "@nodetoy/react-nodetoy";
+import { data } from "../shader/waterData";
 
 function Ground({ onClick }) {
   const { scale, color, position, rotation, size, radius, maxAge } =
@@ -26,16 +28,20 @@ function Ground({ onClick }) {
     });
 
   return (
-    <mesh
-      scale={scale}
-      onClick={onClick}
-      position={[position.x, position.y, position.z]}
-      rotation={[rotation.x, rotation.y, rotation.z]}
-    >
-      <planeGeometry args={[500, 500, 1, 1]} />
-      <meshBasicMaterial color={color} />
-      {/* <Wireframe stroke="white" squeeze dash /> */}
-    </mesh>
+    <>
+      <mesh
+        scale={scale}
+        onClick={onClick}
+        position={[position.x, position.y, position.z]}
+        rotation={[rotation.x, rotation.y, rotation.z]}
+      >
+        <planeGeometry args={[3000, 2000, 1, 1]} />
+        <NodeToyMaterial data={data} />
+        {/* <meshBasicMaterial color={color} /> */}
+        {/* <Wireframe stroke="white" squeeze dash /> */}
+      </mesh>
+      <NodeToyTick />
+    </>
   );
 }
 

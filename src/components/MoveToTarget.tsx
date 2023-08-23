@@ -10,10 +10,7 @@ const MoveToTarget = () => {
       <ECS.Component name="trigger" data={true} />
       <ECS.Component name="moveToTarget" data={true} />
       <ECS.Component name="sceneObject" data={ref}>
-        <mesh ref={ref}>
-          <sphereGeometry />
-          <meshStandardMaterial color="hotpink" />
-        </mesh>
+        <mesh ref={ref}></mesh>
       </ECS.Component>
     </ECS.Entity>
   );
