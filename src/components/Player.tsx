@@ -5,8 +5,6 @@ import { Suspense } from "react";
 import { ECS } from "../state";
 import { Model as Umbrella } from "./Umbrella";
 
-// import { usePlayerController } from "../hooks/usePlayerController";
-
 const Player = () => {
   const ref = React.useRef(89);
   const { rotation } = useControls({
@@ -21,8 +19,6 @@ const Player = () => {
       },
     }),
   });
-
-  // usePlayerController();
 
   return (
     <Suspense fallback={null}>
