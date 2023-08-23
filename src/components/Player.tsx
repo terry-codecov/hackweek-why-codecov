@@ -7,7 +7,7 @@ import { Model as Boat } from "./Boat";
 import { OrthographicCamera } from "@react-three/drei";
 
 const Player = () => {
-  const ref = React.useRef(89);
+  const ref = React.useRef(null);
   const { rotation, position } = useControls({
     player: folder({
       rotation: {
