@@ -1,7 +1,7 @@
 import { useControls } from "leva";
 import { Perf } from "r3f-perf";
 import { Canvas } from "@react-three/fiber";
-import { MapControls, OrbitControls } from "@react-three/drei";
+import { OrbitControls, KeyboardControls } from "@react-three/drei";
 
 import { Scene } from "./Scene";
 
@@ -25,11 +25,13 @@ function App() {
   });
 
   return (
-    <Canvas camera={{ position: [50, 25, 0] }}>
-      {perfVisible && <Perf position="top-left" />}
-      <Lights />
-      <Scene />
-    </Canvas>
+    <KeyboardControls map={[{ keys: ["Space"], name: "fish" }]}>
+      <Canvas camera={{ position: [50, 25, 0] }}>
+        {perfVisible && <Perf position="top-left" />}
+        <Lights />
+        <Scene />
+      </Canvas>
+    </KeyboardControls>
   );
 }
 

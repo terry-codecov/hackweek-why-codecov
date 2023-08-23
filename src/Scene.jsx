@@ -9,6 +9,7 @@ import { Ground } from "./components/Ground";
 import { MovementSystem } from "./components/MovementSystem";
 import { MoveToTarget } from "./components/MoveToTarget";
 import { ECS, position, moveTo } from "./state";
+import { FishingSpots } from "./components/FishingSpots";
 
 const moveToTargetEntities = ECS.world.with("position", "moveToTarget");
 const playerEntities = ECS.world.with("position", "velocity");
@@ -47,6 +48,7 @@ function Scene() {
       <Player />
       <MoveToTarget />
       <MovementSystem />
+      <FishingSpots />
       <Ground onClick={onSetPosition} />
     </Physics>
   );
