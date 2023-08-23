@@ -1,6 +1,8 @@
-import { Suspense, useState, useEffect } from "react";
+import { useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useEntities } from "miniplex-react";
+import { Physics } from "@react-three/rapier";
+import { useControls } from "leva";
 
 import { Player } from "./components/Player";
 import { Ground } from "./components/Ground";
@@ -20,15 +22,15 @@ function useSetBoatTarget() {
     if (moveToTarget.sceneObject.current) {
       position(moveToTarget.sceneObject.current, targetPosition);
     }
-    if (player?.sceneObject?.current) {
-      moveTo(player.sceneObject.current, moveToTarget.sceneObject.current);
-    }
   });
 
   function onSetPosition(event) {
     event.stopPropagation();
 
     setTargetPosition(event.intersections[0].point);
+    if (player?.sceneObject?.current && moveToTarget.sceneObject.current) {
+      moveTo(player, moveToTarget.sceneObject.current);
+    }
   }
 
   return [onSetPosition];
@@ -36,14 +38,17 @@ function useSetBoatTarget() {
 
 function Scene() {
   const [onSetPosition] = useSetBoatTarget();
+  const { physicsDebug } = useControls({
+    physicsDebug: true,
+  });
 
   return (
-    <>
+    <Physics debug={physicsDebug}>
       <Player />
       <MoveToTarget />
       <MovementSystem />
       <Ground onClick={onSetPosition} />
-    </>
+    </Physics>
   );
 }
 

@@ -11,8 +11,10 @@
     "gltfjsx": "gltfjsx --draco --dracoOptions.decodeSpeed=THREE.DRACOLoader.DECODE"
   },
   "dependencies": {
+    "@nodetoy/react-nodetoy": "^0.1.24",
     "@react-three/drei": "^9.80.4",
     "@react-three/fiber": "^8.13.7",
+    "@react-three/rapier": "^1.1.1",
     "@types/three": "^0.155.0",
     "gl-noise": "^1.6.1",
     "leva": "^0.9.35",
