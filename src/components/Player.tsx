@@ -196,7 +196,7 @@ const Player = () => {
             <Float
               speed={5}
               floatIntensity={1}
-              floatingRange={[0, 0.5]}
+              floatingRange={[0, 0.75]}
               rotationIntensity={0}
             >
               <Boat

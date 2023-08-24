@@ -21,14 +21,14 @@ function Modal({ setOpenModal }) {
           {/* </img> */}
         </div>
         <div className="title">
-          <h1>Title of the section/topic.</h1>
+          <h1>What is Code Coverage?</h1>
         </div>
         <div className="body">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco dolore magna
-            aliqua dolore.
+            Code coverage is a testing technique that informs what code is
+            tested and what is not tested. It is often represented as a
+            percentage of the number of lines of code that are tested versus the
+            entire codebase.
           </p>
         </div>
         <div className="footer">
