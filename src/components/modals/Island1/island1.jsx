@@ -13,7 +13,7 @@ function Modal({ setOpenModal }) {
           >
             <img
               id="close-widget"
-              src="src/assets/Screenshot 2023-08-23 at 5.08.36 PM.png"
+              src="public/assets/Screenshot 2023-08-23 at 5.08.36 PM.png"
               alt="close-widget"
             ></img>
           </button>
