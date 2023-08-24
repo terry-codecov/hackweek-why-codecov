@@ -19,7 +19,7 @@ const FishingSpots = () => {
     const { fish } = get();
 
     if (fish && isIntersected) {
-      console.log("asdf");
+      console.log("fish!");
     }
   });
 
@@ -27,9 +27,9 @@ const FishingSpots = () => {
     color: "#00A5A8",
     position: {
       value: {
-        x: 5,
+        x: 15,
         y: 0.05,
-        z: 5,
+        z: -15,
       },
     },
     rotation: {
@@ -72,7 +72,7 @@ const FishingSpots = () => {
               lockX={false}
               lockY={false}
               lockZ={false}
-              position={[0, 12, 0]}
+              position={[position.x, position.y + 12, position.z]}
             >
               <Text fontSize={5}>Press space bar to fish</Text>
             </Billboard>

@@ -1,17 +1,22 @@
 // Reference https://codesandbox.io/s/rapier-character-controller-0b5o7u
 
 import * as React from "react";
-import { Quaternion, Euler, Vector3 } from "three";
+import { Quaternion, Euler, Vector3, Object3D } from "three";
 import { useState, useRef } from "react";
 import { useControls, folder } from "leva";
 import { Suspense } from "react";
 import { RigidBody } from "@react-three/rapier";
 import type { RapierRigidBody } from "@react-three/rapier";
-import { useKeyboardControls } from "@react-three/drei";
+import {
+  useKeyboardControls,
+  Trail,
+  Float,
+  RoundedBox,
+} from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 import { ECS } from "../state";
-import { Model as Boat } from "./Boat";
+import { Model as Boat } from "./generated/Boat";
 
 const Player = () => {
   const rigidRef = useRef<RapierRigidBody>(null);
@@ -188,11 +193,59 @@ const Player = () => {
             mass={1}
             type="dynamic"
           >
-            <Boat
-              rotation={[0, (Math.PI / 180) * 180, 0]}
-              position={[0, -1.25, 0.6]}
-              castShadow={true}
-            />
+            <Float
+              speed={5}
+              floatIntensity={1}
+              floatingRange={[0, 0.5]}
+              rotationIntensity={0}
+            >
+              <Boat
+                rotation={[0, (Math.PI / 180) * 180, 0]}
+                position={[0, 0, 0.6]}
+              />
+              <Trail
+                width={14}
+                length={25}
+                color="white"
+                attenuation={(t: number) => {
+                  return t * t;
+                }}
+              >
+                <RoundedBox
+                  visible={false}
+                  args={[0.25, 2]}
+                  position={[0, 0.05, -1.7]}
+                ></RoundedBox>
+              </Trail>
+              <Trail
+                width={0.5}
+                length={4}
+                color="white"
+                attenuation={(t: number) => {
+                  return t * t;
+                }}
+              >
+                <RoundedBox
+                  visible={false}
+                  args={[0.25, 0.25]}
+                  position={[0, 5.7, 0.7]}
+                ></RoundedBox>
+              </Trail>
+              <Trail
+                width={0.5}
+                length={3}
+                color="white"
+                attenuation={(t: number) => {
+                  return t * t;
+                }}
+              >
+                <RoundedBox
+                  visible={false}
+                  args={[0.25, 0.25]}
+                  position={[0, 1.6, -2]}
+                ></RoundedBox>
+              </Trail>
+            </Float>
           </RigidBody>
         </ECS.Component>
       </ECS.Entity>
