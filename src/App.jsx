@@ -2,10 +2,12 @@ import { useState, Suspense } from "react";
 import { useRef } from "react";
 import { useControls, folder } from "leva";
 import { Perf } from "r3f-perf";
+import Modal from "./components/Island1.jsx";
 
 import { Canvas, useFrame } from "@react-three/fiber";
 
 import { Model as Umbrella } from "./components/Umbrella";
+
 
 function Box({ name = "box", ...props }) {
   // This reference will give us direct access to the mesh
@@ -46,6 +48,7 @@ function Box({ name = "box", ...props }) {
     },
   });
 
+
   return (
     <mesh
       {...props}
@@ -76,22 +79,38 @@ function App() {
       },
     }),
   });
+  
+  //+Modals
+   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <Canvas>
-      {perfVisible && <Perf position="top-left" />}
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
-      <Suspense fallback={null}>
-        <Umbrella
-          scale="5"
-          rotation={[0, 5.5, 0]}
-          position={[position.x, position.y, position.z]}
-        />
-      </Suspense>
-      <Box name="box1" position={[-1.2, 0, 0]} />
-      <Box name="box2" position={[1.2, 0, 0]} />
-    </Canvas>
+    <div id="App">
+      <Canvas id="Codecove">
+        {perfVisible && <Perf position="top-left" />}
+        <ambientLight />
+        <pointLight position={[10, 10, 10]} />
+        <Suspense fallback={null}>
+          <Umbrella
+            scale="5"
+            rotation={[0, 5.5, 0]}
+            position={[position.x, position.y, position.z]}
+          />
+        </Suspense>
+        <Box name="box1" position={[-1.2, 0, 0]} />
+        <Box name="box2" position={[1.2, 0, 0]} />
+      </Canvas>
+      <div id="overlay">
+      <button id=""
+        className="openModalBtn"
+        //set value of island are to set openModal value to true onClick
+        onClick={() => {
+          setModalOpen(true);
+        }}
+      > Learn more
+      </button>
+      {modalOpen && <Modal setOpenModal={setModalOpen} />}
+      </div>
+    </div>
   );
 }
 

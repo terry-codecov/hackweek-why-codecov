@@ -1,11 +1,37 @@
-html, body, #root {
+html, body, #root, #App {
 height: 100%;
 }
 
 body {
     margin: 0;
 }
-canvas {
+#Codecove {
     width: 100% !important;
     height: 100% !important;
+    z-index: 1;
+}
+#App {
+    position: relative;
+}
+#overlay, #Codecove {
+    position: absolute;
+}
+#overlay {
+    z-index: 5;
+}
+.openModalBtn {
+    background-color: #FF0077;
+    color: #fff;
+    border: 1px solid #FF0077;
+    border-radius: 8px;
+    padding: 10px 15px 10px 15px;
+    cursor: pointer;
+    z-index: 15;
+    position: fixed;
+    right: 50%;
+    bottom: 20%;
+}
+.openModalBtn:hover {
+    background-color: #d90065;
+    border:#d90065 1px solid;
 }
