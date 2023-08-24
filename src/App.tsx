@@ -33,6 +33,7 @@ function App() {
       ]}
     >
       <Canvas
+        id="Codecove"
         shadows
         camera={{
           fov: 45,

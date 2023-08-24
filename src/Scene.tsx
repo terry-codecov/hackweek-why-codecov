@@ -1,11 +1,13 @@
 import * as React from "react";
-import { Physics } from "@react-three/rapier";
+import { useState } from "react";
+import { Physics, BallCollider } from "@react-three/rapier";
 import { useControls, folder } from "leva";
-import { CuboidCollider, RigidBody } from "@react-three/rapier";
+import { Html } from "@react-three/drei";
 
 import { Player } from "./components/Player";
 import { Ground } from "./components/Ground";
 import { Model as Island1Beach } from "./components/Island1Beach";
+import Modal from "./components/modals/Island1/island1";
 
 function Scene() {
   const { physicsDebug, position } = useControls({
@@ -15,13 +17,26 @@ function Scene() {
     }),
   });
 
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <Physics debug={physicsDebug}>
       <Player />
       <Ground />
       <group position={position}>
-        <CuboidCollider args={[10, 10, 10]}></CuboidCollider>
+        <BallCollider args={[15]}></BallCollider>
         <Island1Beach scale={2} />
+        <BallCollider
+          onIntersectionEnter={() => setModalOpen(true)}
+          onIntersectionExit={() => setModalOpen(false)}
+          sensor
+          args={[35]}
+        ></BallCollider>
+        {modalOpen && (
+          <Html fullscreen visible={modalOpen}>
+            <Modal setOpenModal={setModalOpen} />
+          </Html>
+        )}
       </group>
     </Physics>
   );
