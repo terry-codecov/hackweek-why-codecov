@@ -8,6 +8,7 @@ import { Player } from "./components/Player";
 import { Ground } from "./components/Ground";
 import { Model as Island1Beach } from "./components/Island1Beach";
 import Modal from "./components/modals/Island1/island1";
+import { FishingSpots } from "./components/FishingSpots";
 
 function Scene() {
   const { physicsDebug, position } = useControls({
@@ -23,7 +24,8 @@ function Scene() {
     <Physics debug={physicsDebug}>
       <Player />
       <Ground />
-      <group position={position}>
+      <FishingSpots />
+      {/* <group position={position}>
         <BallCollider args={[15]}></BallCollider>
         <Island1Beach scale={2} />
         <BallCollider
@@ -37,7 +39,7 @@ function Scene() {
             <Modal setOpenModal={setModalOpen} />
           </Html>
         )}
-      </group>
+      </group> */}
     </Physics>
   );
 }
