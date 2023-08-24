@@ -5,20 +5,7 @@ height: 100%;
 body {
     margin: 0;
 }
-#Codecove {
-    width: 100% !important;
-    height: 100% !important;
-    z-index: 1;
-}
-#App {
-    position: relative;
-}
-#overlay, #Codecove {
-    position: absolute;
-}
-#overlay {
-    z-index: 5;
-}
+
 .openModalBtn {
     background-color: #FF0077;
     color: #fff;

@@ -11,14 +11,22 @@
     "gltfjsx": "gltfjsx --draco --dracoOptions.decodeSpeed=THREE.DRACOLoader.DECODE"
   },
   "dependencies": {
+    "@nodetoy/react-nodetoy": "^0.1.24",
     "@react-three/drei": "^9.80.4",
     "@react-three/fiber": "^8.13.7",
+    "@react-three/rapier": "^1.1.1",
     "@types/three": "^0.155.0",
+    "gl-noise": "^1.6.1",
     "leva": "^0.9.35",
+    "miniplex": "^2.0.0",
+    "miniplex-react": "^2.0.1",
+    "npm": "^9.8.1",
     "r3f-perf": "^7.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "three": "^0.155.0"
+    "three": "^0.155.0",
+    "three-custom-shader-material": "^5.4.0",
+    "valtio": "^1.11.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
