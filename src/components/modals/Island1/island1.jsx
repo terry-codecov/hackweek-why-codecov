@@ -35,25 +35,25 @@ function Modal({ setOpenModal }) {
           {/* <img className="island-directory" src="src/assets/Screenshot 2023-08-23 at 4.38.59 PM.png" alt="island-directory"></img> */}
           <div className="icon-container">
             <div className="col-1">
-              <img id="icon" src="src/assets/Icons/Beach-Pink.png"></img>
+              <img id="icon" src="assets/Icons/Beach-Pink.png"></img>
             </div>
             <div className="col-2">
-              <img id="icon" src="src/assets/Icons/Forest-Gray.png"></img>
+              <img id="icon" src="/assets/Icons/Forest-Gray.png"></img>
             </div>
             <div className="col-3">
-              <img id="icon" src="src/assets/Icons/Igloo-Gray.png"></img>
+              <img id="icon" src="/assets/Icons/Igloo-Gray.png"></img>
             </div>
             <div className="col-4">
-              <img id="icon" src="src/assets/Icons/Jungle-Gray.png"></img>
+              <img id="icon" src="/assets/Icons/Jungle-Gray.png"></img>
             </div>
             <div className="col-5">
-              <img id="icon" src="src/assets/Icons/Nova-Scotia-Gray.png"></img>
+              <img id="icon" src="/assets/Icons/Nova-Scotia-Gray.png"></img>
             </div>
             <div className="col-6">
-              <img id="icon" src="src/assets/Icons/Volcano-Gray.png"></img>
+              <img id="icon" src="/assets/Icons/Volcano-Gray.png"></img>
             </div>
             <div className="col-7">
-              <img id="icon" src="src/assets/Icons/Wind-Farm-Gray.png"></img>
+              <img id="icon" src="/assets/Icons/Wind-Farm-Gray.png"></img>
             </div>
           </div>
         </div>
