@@ -24,12 +24,12 @@ const FishingSpots = () => {
   });
 
   const { color, position, rotation } = useControls("fish", {
-    color: "#64c75b",
+    color: "#00A5A8",
     position: {
       value: {
-        x: -35,
-        y: -4.5,
-        z: -35,
+        x: 5,
+        y: 0.05,
+        z: 5,
       },
     },
     rotation: {

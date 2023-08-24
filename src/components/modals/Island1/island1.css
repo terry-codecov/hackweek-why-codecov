@@ -1,0 +1,146 @@
+/* <style> */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+/* </style> */
+
+.modalBackground {
+    width: 533px;
+    height: 655px;
+    background-color: #fff;
+    position: fixed;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    /* border: 1px solid #f07; */
+    left: 120px;
+    top: -250px;
+
+    box-shadow: #0000001a 0px 10px 14px 0px;
+    border-radius: 30px;
+  }
+  
+  .modalContainer {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 50px;
+  }
+  
+  .title {
+    display: inline-block;
+    text-align: left;
+    /* font-size: 70px; */
+    font-size: 25px;
+    font-family:'Poppins', sans-serif;;
+    font-weight: bold;
+    line-height: 1.2;
+    top: 50px;
+    position: absolute;
+  }
+
+  h1 {
+    margin: 0px;
+
+  }
+  
+  .titleCloseBtn {
+    right: 15px;
+    top: 15px;
+    position: absolute;
+  }
+  
+  .titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    color: #8c8c8c;
+    padding-top:5px;
+  }
+  
+  .modalContainer .body {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    font-size: 20px;
+    text-align: left;
+    color: #212529;
+    font-family:'Poppins', sans-serif;
+    padding-top: 135px;
+  }
+
+  p {
+    margin-top: 0;
+  }
+  
+  .modalContainer .footer {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px -30px 0px;
+  }
+  
+  /* .island-directory {
+    width: 90%;
+    position: absolute;
+    bottom: 50px;
+  }
+   */
+
+   .icon-container {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+      "col-1 col-2 col-3 col-4 col-5 col-6 col-7";
+    height: 100px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .col-1 { 
+    grid-area: col-1;
+    /* background-image: url("src/assets/Icons/Beach-Pink.png"); */
+  }
+  
+  .col-2 {
+    grid-area: col-2;
+    /* background-image: url("src/assets/Icons/Forest-Gray.png");  */
+  }
+  
+  .col-3 { 
+    grid-area: col-3;
+    /* background-image: url("src/assets/Icons/Igloo-Gray.png"); */
+  }
+  
+  .col-4 {
+    grid-area: col-4; 
+    /* background-image: url("src/assets/Icons/Jungle-Gray.png"); */
+  }
+  
+  .col-5 { 
+    grid-area: col-5;
+    /* background-image: url("src/assets/Icons/Nova-Scotia-Gray.png"); */
+  }
+  
+  .col-6 { 
+    grid-area: col-6;
+    /* background-image: url("src/assets/Icons/Volcano-Gray.png"); */
+  }
+  
+  .col-7 { 
+    grid-area: col-7; 
+    /* background-image: url("src/assets/Icons/Wind-Farm-Gray.png");  */
+  }
+  
+  #icon{
+    width: 75%;
+  }
+  
