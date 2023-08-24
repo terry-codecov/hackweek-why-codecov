@@ -16,7 +16,7 @@ function Lights() {
   return (
     <>
       <color attach="background" args={["skyblue"]} />
-      <fog attach="fog" args={["skyblue", 0.002, 600]} />
+      {/* <fog attach="fog" args={["skyblue", 0.002, 600]} /> */}
       <ambientLight intensity={0.7} />
       <directionalLight position={[1, 2, 3]} intensity={2.5} />
       <directionalLight position={[3, 2, 3]} intensity={0.75} />

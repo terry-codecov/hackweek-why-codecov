@@ -12,6 +12,7 @@ import {
   Trail,
   Float,
   RoundedBox,
+  OrbitControls,
 } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
@@ -23,9 +24,10 @@ const Player = () => {
   const [orientation, setOrientation] = useState(Math.PI);
   const [subscribeKeys, getKeys] = useKeyboardControls();
 
-  const { speed } = useControls({
+  const { speed, camera } = useControls({
     player: folder({
       speed: { value: 1390, min: 500, max: 2000, step: 10 },
+      camera: false,
     }),
   });
 
@@ -162,27 +164,30 @@ const Player = () => {
     /**
      * Camera Movement
      */
-    const playerPosition = rigidRef.current.translation();
+    if (!camera) {
+      const playerPosition = rigidRef.current.translation();
 
-    const cameraPosition = new Vector3();
-    cameraPosition.copy(
-      new Vector3(playerPosition.x, playerPosition.y, playerPosition.z)
-    );
-    cameraPosition.z += 50;
-    cameraPosition.y += 25;
+      const cameraPosition = new Vector3();
+      cameraPosition.copy(
+        new Vector3(playerPosition.x, playerPosition.y, playerPosition.z)
+      );
+      cameraPosition.z += 50;
+      cameraPosition.y += 25;
 
-    const cameraTarget = new Vector3();
-    cameraTarget.copy(
-      new Vector3(playerPosition.x, playerPosition.y, playerPosition.z)
-    );
-    cameraTarget.y += 2.5;
+      const cameraTarget = new Vector3();
+      cameraTarget.copy(
+        new Vector3(playerPosition.x, playerPosition.y, playerPosition.z)
+      );
+      cameraTarget.y += 5;
 
-    state.camera.position.copy(cameraPosition);
-    state.camera.lookAt(cameraTarget);
+      state.camera.position.copy(cameraPosition);
+      state.camera.lookAt(cameraTarget);
+    }
   });
 
   return (
     <Suspense fallback={null}>
+      {camera && <OrbitControls />}
       <ECS.Entity>
         <ECS.Component name="active" data={true} />
         <ECS.Component name="rigid" data={rigidRef}>
