@@ -12,11 +12,11 @@ export function Island2() {
   const [modalOpen, setModalOpen] = useState(false);
 
   const { position } = useControls("island 2", {
-    position: [-32, 0, -25],
+    position: [62, 1.5, 0],
   });
 
   return (
-    <group position={position}>
+    <group position={position} rotation={[0, 5, 0]}>
       <BallCollider args={[15]}></BallCollider>
       <IslandModel scale={2} />
       <BallCollider
