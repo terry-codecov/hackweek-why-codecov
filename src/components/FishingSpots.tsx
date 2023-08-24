@@ -27,9 +27,9 @@ const FishingSpots = () => {
     color: "#00A5A8",
     position: {
       value: {
-        x: 15,
+        x: 10,
         y: 0.05,
-        z: -15,
+        z: -25,
       },
     },
     rotation: {
