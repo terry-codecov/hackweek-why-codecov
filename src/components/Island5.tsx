@@ -12,13 +12,14 @@ export function Island5() {
   const [modalOpen, setModalOpen] = useState(false);
 
   const { position } = useControls("island 5", {
-    position: [-12, 0, -60 * 2.25],
+    position: [-15, 0, -100],
   });
 
   return (
     <group position={position} rotation={[0, 4.55, 0]}>
       <BallCollider args={[15]}></BallCollider>
-      <IslandModel scale={2} />
+      <BallCollider args={[15]} position={[-10, 0, 5]}></BallCollider>
+      <IslandModel scale={1.25} />
       <BallCollider
         onIntersectionEnter={() => setShowButton(true)}
         onIntersectionExit={() => setShowButton(false)}

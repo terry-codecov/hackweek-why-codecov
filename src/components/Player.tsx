@@ -26,7 +26,7 @@ const Player = () => {
 
   const { speed, camera } = useControls({
     player: folder({
-      speed: { value: 1390, min: 500, max: 2000, step: 10 },
+      speed: { value: 1490, min: 500, max: 2000, step: 10 },
       camera: false,
     }),
   });
@@ -194,6 +194,7 @@ const Player = () => {
           <RigidBody
             scale={0.8}
             lockRotations={true}
+            position={[0, 0, 60]}
             ref={rigidRef}
             mass={1}
             type="dynamic"

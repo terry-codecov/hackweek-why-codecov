@@ -12,7 +12,7 @@ export function Island1() {
   const [modalOpen, setModalOpen] = useState(false);
 
   const { position } = useControls("island 1", {
-    position: [-32, 0, 0],
+    position: [-82, 0, 0],
   });
 
   return (
