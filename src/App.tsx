@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useControls, folder } from "leva";
+import { useControls } from "leva";
 import { Perf } from "r3f-perf";
 import { Canvas } from "@react-three/fiber";
 import { KeyboardControls, Loader } from "@react-three/drei";
@@ -16,7 +16,7 @@ function Lights() {
   return (
     <>
       <color attach="background" args={["skyblue"]} />
-      <fog attach="fog" args={["skyblue", 0.002, 600]} />
+      <fog attach="fog" args={["skyblue", 0.002, 900]} />
       <ambientLight intensity={0.7} />
       <directionalLight position={[1, 2, 3]} intensity={2.5} />
       <directionalLight position={[3, 2, 3]} intensity={0.75} />
@@ -30,7 +30,7 @@ function Lights() {
 }
 
 function App() {
-  const { perfVisible } = useControls({
+  const { perfVisible } = useControls("perf", {
     perfVisible: false,
   });
 

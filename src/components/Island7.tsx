@@ -4,44 +4,45 @@ import { useControls } from "leva";
 import { BallCollider } from "@react-three/rapier";
 import { Html } from "@react-three/drei";
 
-import { Model as IslandModel } from "./generated/Island5";
+import { Model as IslandModel } from "./generated/Island7";
 import { Modal } from "./modals/Modal";
 
-export function Island5() {
+export function Island7() {
   const [showButton, setShowButton] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
-  const { position } = useControls("island 5", {
-    position: [-18, 0, -160],
+  const { position } = useControls("island 7", {
+    position: [20, 0, -150],
   });
 
   return (
     <group position={position} rotation={[0, 4.55, 0]}>
-      <BallCollider args={[15]}></BallCollider>
-      <BallCollider args={[15]} position={[-10, 0, 5]}></BallCollider>
-      <IslandModel scale={1.25} />
+      <BallCollider args={[12]} position={[-12, 0, -5]}></BallCollider>
+      <IslandModel scale={1} />
       <BallCollider
+        position={[-12, 0, -5]}
         onIntersectionEnter={() => setShowButton(true)}
         onIntersectionExit={() => {
-          setShowButton(false);
           setModalOpen(false);
+          setShowButton(false);
         }}
         sensor
-        args={[23]}
+        args={[22]}
       ></BallCollider>
       {modalOpen && (
         <Modal
-          title="Getting Started with Code Coverage"
+          title="Path Coverage - is often considered a part of branch coverage
+            calculations."
           setOpenModal={setModalOpen}
-          order={3}
+          order={4}
         >
-          Getting started with code coverage usually requires your codebase to
-          have tests. If you don’t have any tests, then you will have 0% code
-          coverage. Most languages have their own tools to calculate coverage
-          when a test suite is run. After you have added tests and decided on
-          what tool to use, you can begin to collect coverage metrics.
-          <br></br>Using a code coverage as a service tool, like Codecov, can
-          help get that data back in front of your developers.
+          {" "}
+          So which one is better? If you are limited to only calculating one, we
+          recommend line coverage. Line coverage will at least cover the entire
+          codebase. At Codecov, we aggregate both sets of data. If both line and
+          branch coverage are provided, we will use the branch information and
+          fill in unknown lines with the line coverage information to provide a
+          more holistic view of your coverage.
         </Modal>
       )}
       {showButton && (
