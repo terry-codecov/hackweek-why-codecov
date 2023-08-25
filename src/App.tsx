@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useControls } from "./useLeva";
+import { useControls } from "leva";
 import { Perf } from "r3f-perf";
 import { Canvas } from "@react-three/fiber";
 import { KeyboardControls, Loader } from "@react-three/drei";

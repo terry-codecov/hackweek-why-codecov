@@ -17,13 +17,14 @@ export function Island6() {
 
   return (
     <group position={position} rotation={[0, 4.55, 0]}>
-      <BallCollider args={[15]}></BallCollider>
+      <BallCollider args={[15]} position={[-2, 0, -5]}></BallCollider>
       <IslandModel scale={1} />
       <BallCollider
         onIntersectionEnter={() => setShowButton(true)}
         onIntersectionExit={() => setShowButton(false)}
         sensor
-        args={[20]}
+        args={[19]}
+        position={[-2, 0, -5]}
       ></BallCollider>
       {/* {showButton && (
         <Html>

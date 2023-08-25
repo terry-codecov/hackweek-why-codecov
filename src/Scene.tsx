@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Physics, CuboidCollider } from "@react-three/rapier";
-import { useControls } from "./useLeva";
+import { useControls } from "leva";
 
 import { Player } from "./components/Player";
 import { Ground } from "./components/Ground";
@@ -15,7 +15,7 @@ import { Island7 } from "./components/Island7";
 import { FishingSpots } from "./components/FishingSpots";
 
 function Scene() {
-  const { physicsDebug } = useControls("physics", {
+  const { physicsDebug } = useControls({
     physicsDebug: false,
   });
 
