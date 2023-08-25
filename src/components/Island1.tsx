@@ -21,15 +21,27 @@ export function Island1() {
       <IslandModel scale={2} />
       <BallCollider
         onIntersectionEnter={() => setShowButton(true)}
-        onIntersectionExit={() => setShowButton(false)}
+        onIntersectionExit={() => {
+          setShowButton(false);
+          setModalOpen(false);
+          }}
         sensor
         args={[25]}
       ></BallCollider>
+      {modalOpen && (
+        <Html>
+          <Modal setOpenModal={setModalOpen} />
+        </Html>
+      )}
       {showButton && (
         <Html>
-          <Modal setOpenModal={setShowButton} />
+          <button onClick={()=> {
+            setModalOpen(true);
+            setShowButton(false);
+          }}>Learn more</button>
         </Html>
       )}
     </group>
   );
 }
+

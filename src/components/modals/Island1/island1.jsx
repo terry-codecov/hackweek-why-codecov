@@ -1,5 +1,5 @@
 import React from "react";
-import "./island1.css";
+import "../island.css";
 
 function Modal({ setOpenModal }) {
   return (

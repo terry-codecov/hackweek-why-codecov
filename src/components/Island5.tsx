@@ -5,7 +5,7 @@ import { BallCollider } from "@react-three/rapier";
 import { Html } from "@react-three/drei";
 
 import { Model as IslandModel } from "./generated/Island5";
-// import Modal from "./modals/Island5/island5";
+import {Modal} from "./modals/Island5/island5";
 
 export function Island5() {
   const [showButton, setShowButton] = useState(false);
@@ -22,15 +22,26 @@ export function Island5() {
       <IslandModel scale={1.25} />
       <BallCollider
         onIntersectionEnter={() => setShowButton(true)}
-        onIntersectionExit={() => setShowButton(false)}
+        onIntersectionExit={() => {
+          setShowButton(false);
+          setModalOpen(false);
+          }}
         sensor
         args={[20]}
-      ></BallCollider>
-      {/* {showButton && (
+      ></BallCollider>      
+      {modalOpen && (
         <Html>
-          <Modal setOpenModal={setShowButton} />
+          <Modal setOpenModal={setModalOpen} />
         </Html>
-      )} */}
+      )}
+      {showButton && (
+        <Html>
+          <button onClick={()=> {
+            setModalOpen(true);
+            setShowButton(false);
+          }}>Learn more</button>
+        </Html>
+      )}
     </group>
   );
 }
