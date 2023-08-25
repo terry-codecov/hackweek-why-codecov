@@ -10,8 +10,6 @@ export function Model(props) {
   const { nodes, materials, animations } = useGLTF("/Island2.glb");
   const { actions } = useAnimations(animations, group);
 
-  console.log(actions);
-
   useEffect(() => {
     for (let key in actions) {
       actions[key].play();

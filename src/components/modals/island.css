@@ -8,14 +8,9 @@
     width: 533px;
     height: fit-content;
     background-color: #fff;
-    position: absolute;
     display: flex;
     justify-content: left;
     align-items: center;
-    /* border: 1px solid #f07; */
-    left: 175px;
-    /* top: -250px; */
-    top: -85px;
     box-shadow: #0000001a 0px 10px 14px 0px;
     border-radius: 30px;
   }
@@ -26,8 +21,9 @@
     flex-direction: column;
     margin: 0px 50px;
   }
-  
-  .title {
+    
+  h1 {
+    margin: 0px;
     display: inline-block;
     text-align: left;
     /* font-size: 70px; */
@@ -35,12 +31,6 @@
     font-family:'Poppins', sans-serif;;
     font-weight: bold;
     line-height: 1.2;
-    top: 50px;
-    position: absolute;
-  }
-
-  h1 {
-    margin: 0px;
 
   }
   
@@ -61,6 +51,7 @@
   
   .modalContainer .body {
     flex: 50%;
+    flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: left;
@@ -68,11 +59,10 @@
     text-align: left;
     color: #212529;
     font-family:'Poppins', sans-serif;
-    padding-top: 185px;
+    padding-top: 50px;
   }
 
   p {
-    margin-top: 0;
     height: 180px;
     overflow: scroll;
     overflow-x: hidden; 
@@ -84,7 +74,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin: 0 10px;
   }
 
    .icon-container {  display: grid;
@@ -97,9 +87,9 @@
     align-items: center;
     grid-template-areas:
       "col-1 col-2 col-3 col-4 col-5 col-6 col-7";
-    height: 100px;
     width: 100%;
     text-align: center;
+    margin: 15px 0;
   }
   
   .col-1 { 

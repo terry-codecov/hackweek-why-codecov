@@ -5,7 +5,7 @@ import { BallCollider } from "@react-three/rapier";
 import { Html } from "@react-three/drei";
 
 import { Model as IslandModel } from "./generated/Island1";
-import Modal from "./modals/Island1/island1";
+import { Modal } from "./modals/Modal";
 
 export function Island1() {
   const [showButton, setShowButton] = useState(false);
@@ -24,24 +24,33 @@ export function Island1() {
         onIntersectionExit={() => {
           setShowButton(false);
           setModalOpen(false);
-          }}
+        }}
         sensor
         args={[25]}
       ></BallCollider>
       {modalOpen && (
-        <Html>
-          <Modal setOpenModal={setModalOpen} />
-        </Html>
+        <Modal
+          title="What is Code Coverage?"
+          setOpenModal={setModalOpen}
+          order={1}
+        >
+          Code coverage is a testing technique that informs what code is tested
+          and what is not tested. It is often represented as a percentage of the
+          number of lines of code that are tested versus the entire codebase.
+        </Modal>
       )}
       {showButton && (
         <Html>
-          <button onClick={()=> {
-            setModalOpen(true);
-            setShowButton(false);
-          }}>Learn more</button>
+          <button
+            onClick={() => {
+              setModalOpen(true);
+              setShowButton(false);
+            }}
+          >
+            Learn more
+          </button>
         </Html>
       )}
     </group>
   );
 }
-

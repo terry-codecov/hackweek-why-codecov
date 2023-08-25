@@ -5,7 +5,7 @@ import { BallCollider } from "@react-three/rapier";
 import { Html } from "@react-three/drei";
 
 import { Model as IslandModel } from "./generated/Island7";
-import { Modal } from "./modals/Island7/island7";
+import { Modal } from "./modals/Modal";
 
 export function Island7() {
   const [showButton, setShowButton] = useState(false);
@@ -30,9 +30,20 @@ export function Island7() {
         args={[22]}
       ></BallCollider>
       {modalOpen && (
-        <Html>
-          <Modal setOpenModal={setModalOpen} />
-        </Html>
+        <Modal
+          title="Path Coverage - is often considered a part of branch coverage
+            calculations."
+          setOpenModal={setModalOpen}
+          order={4}
+        >
+          {" "}
+          So which one is better? If you are limited to only calculating one, we
+          recommend line coverage. Line coverage will at least cover the entire
+          codebase. At Codecov, we aggregate both sets of data. If both line and
+          branch coverage are provided, we will use the branch information and
+          fill in unknown lines with the line coverage information to provide a
+          more holistic view of your coverage.
+        </Modal>
       )}
       {showButton && (
         <Html>

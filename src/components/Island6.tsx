@@ -5,7 +5,7 @@ import { BallCollider } from "@react-three/rapier";
 import { Html } from "@react-three/drei";
 
 import { Model as IslandModel } from "./generated/Island6";
-import { Modal } from "./modals/Island6/island6";
+import { Modal } from "./modals/Modal";
 
 export function Island6() {
   const [showButton, setShowButton] = useState(false);
@@ -30,9 +30,21 @@ export function Island6() {
         position={[-2, 0, -5]}
       ></BallCollider>
       {modalOpen && (
-        <Html>
-          <Modal setOpenModal={setModalOpen} />
-        </Html>
+        <Modal
+          title="Setting a Coverage Goal"
+          setOpenModal={setModalOpen}
+          order={5}
+        >
+          Striving for 100% code coverage is debated among developers. While it
+          ensures every line of code has associated tests, achieving it can be
+          exhaustive and doesn’t guarantee bug-free code. Instead, focus on
+          building a testing culture: start by setting up coverage tools, share
+          coverage data with commits, gradually raise coverage standards per
+          commit, targeting 30% and later 80% overall coverage. Hitting 100% is
+          optional but not necessary; emphasis should be on test quality over
+          sheer coverage. This approach balances meaningful testing and code
+          quality.{" "}
+        </Modal>
       )}
       {showButton && (
         <Html>

@@ -5,7 +5,7 @@ import { BallCollider } from "@react-three/rapier";
 import { Html } from "@react-three/drei";
 
 import { Model as IslandModel } from "./generated/Island3";
-import { Modal } from "./modals/Island3/island3";
+import { Modal } from "./modals/Modal";
 
 export function Island3() {
   const [showButton, setShowButton] = useState(false);
@@ -29,9 +29,13 @@ export function Island3() {
         args={[18]}
       ></BallCollider>
       {modalOpen && (
-        <Html>
-          <Modal setOpenModal={setModalOpen} />
-        </Html>
+        <Modal title="Why test code?" setOpenModal={setModalOpen} order={6}>
+          A test runs a piece of code and ensures that the system produces the
+          expected behavior given some input. Some tests check to see if a
+          database updates properly, others will make sure a UI component is
+          available. Why is testing is so important? Because bugs are everywhere
+          and testing helps you find and prevent them.
+        </Modal>
       )}
       {showButton && (
         <Html>
