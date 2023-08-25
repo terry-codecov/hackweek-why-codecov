@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useControls } from "leva";
+import { useControls } from "./useLeva";
 import { Perf } from "r3f-perf";
 import { Canvas } from "@react-three/fiber";
 import { KeyboardControls, Loader } from "@react-three/drei";
@@ -30,7 +30,7 @@ function Lights() {
 }
 
 function App() {
-  const { perfVisible } = useControls({
+  const { perfVisible } = useControls("perf", {
     perfVisible: false,
   });
 

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Physics, CuboidCollider } from "@react-three/rapier";
-import { useControls } from "leva";
+import { useControls } from "./useLeva";
 
 import { Player } from "./components/Player";
 import { Ground } from "./components/Ground";
@@ -15,16 +15,16 @@ import { Island7 } from "./components/Island7";
 import { FishingSpots } from "./components/FishingSpots";
 
 function Scene() {
-  const { physicsDebug } = useControls({
+  const { physicsDebug } = useControls("physics", {
     physicsDebug: false,
   });
 
   return (
     <Physics debug={physicsDebug}>
-      <CuboidCollider args={[150, 5, 5]} position={[0, 0, 100]} />
-      <CuboidCollider args={[150, 5, 5]} position={[0, 0, -200]} />
-      <CuboidCollider args={[5, 5, 200]} position={[150, 0, -80]} />
-      <CuboidCollider args={[5, 5, 200]} position={[-150, 0, -80]} />
+      <CuboidCollider args={[150, 5, 5]} position={[0, 0, 40]} />
+      <CuboidCollider args={[150, 5, 5]} position={[0, 0, -260]} />
+      <CuboidCollider args={[5, 5, 200]} position={[150, 0, -140]} />
+      <CuboidCollider args={[5, 5, 200]} position={[-150, 0, -140]} />
       <Player />
       <Ground />
       {/* <FishingSpots /> */}

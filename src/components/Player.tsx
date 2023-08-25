@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Quaternion, Euler, Vector3, Object3D } from "three";
 import { useState, useRef } from "react";
-import { useControls, folder } from "leva";
+import { useControls } from "../useLeva";
 import { Suspense } from "react";
 import { RigidBody } from "@react-three/rapier";
 import type { RapierRigidBody } from "@react-three/rapier";
@@ -24,11 +24,9 @@ const Player = () => {
   const [orientation, setOrientation] = useState(Math.PI);
   const [subscribeKeys, getKeys] = useKeyboardControls();
 
-  const { speed, camera } = useControls({
-    player: folder({
-      speed: { value: 1490, min: 500, max: 2000, step: 10 },
-      camera: false,
-    }),
+  const { speed, camera } = useControls("player", {
+    speed: { value: 1490, min: 500, max: 2000, step: 10 },
+    camera: false,
   });
 
   useFrame((state, delta) => {
@@ -194,7 +192,6 @@ const Player = () => {
           <RigidBody
             scale={0.8}
             lockRotations={true}
-            position={[0, 0, 60]}
             ref={rigidRef}
             mass={1}
             type="dynamic"

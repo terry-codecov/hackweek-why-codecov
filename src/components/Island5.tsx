@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
-import { useControls } from "leva";
+import { useControls } from "../useLeva";
 import { BallCollider } from "@react-three/rapier";
 import { Html } from "@react-three/drei";
 
@@ -12,7 +12,7 @@ export function Island5() {
   const [modalOpen, setModalOpen] = useState(false);
 
   const { position } = useControls("island 5", {
-    position: [-15, 0, -100],
+    position: [-15, 0, -160],
   });
 
   return (
