@@ -22,3 +22,12 @@ body {
     background-color: #d90065;
     border:#d90065 1px solid;
 }
+button {
+    width: 110px;
+    padding: 10px 5px;
+    border-radius: 8px;
+    background-color: #ff0077;
+    color: #FFf;
+    font-family: 'Poppins';
+    font-weight: 600;
+}
