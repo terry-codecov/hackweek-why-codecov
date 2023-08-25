@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
-import { useControls } from "../useLeva";
+import { useControls } from "leva";
 import { BallCollider } from "@react-three/rapier";
 import { Html } from "@react-three/drei";
 

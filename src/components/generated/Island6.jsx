@@ -40,27 +40,6 @@ export function Model(props) {
       <mesh geometry={nodes.Plane001.geometry} material={materials['Roof.001']} position={[-5.065, 5.942, -15.38]} rotation={[-3.12, 0.549, 1.5]} scale={[-0.279, -22.084, -0.25]} />
       <mesh geometry={nodes.Plane002.geometry} material={materials['Roof.001']} position={[-4.935, 4.222, -15.334]} rotation={[-3.12, 0.549, 1.5]} scale={[-0.279, -22.084, -0.25]} />
       <mesh geometry={nodes.Plane003.geometry} material={materials['Roof.001']} position={[-4.85, 2.693, -15.298]} rotation={[-3.12, 0.549, 1.5]} scale={[-0.279, -22.084, -0.25]} />
-      <mesh geometry={nodes.Icosphere031.geometry} material={materials.LP_wood} position={[-7.989, 4.707, -1.947]} scale={[0.414, 0.722, 0.414]} />
-      <mesh geometry={nodes.Icosphere001.geometry} material={materials.LP_wood} position={[-4.942, 4.991, -4.837]} rotation={[0, -1.039, 0]} scale={[0.414, 0.722, 0.414]} />
-      <mesh geometry={nodes.Icosphere002.geometry} material={materials.LP_wood} position={[-8.345, 4.991, -5.507]} rotation={[0, -0.193, 0]} scale={[0.414, 0.722, 0.414]} />
-      <mesh geometry={nodes.Icosphere003.geometry} material={materials.LP_wood} position={[-9.327, 4.991, -0.462]} rotation={[0, 0.784, 0]} scale={[0.414, 0.722, 0.414]} />
-      <mesh geometry={nodes.Icosphere004.geometry} material={materials.LP_wood} position={[-6.256, 4.991, -0.306]} rotation={[0, -0.633, 0]} scale={[0.414, 0.722, 0.414]} />
-      <mesh geometry={nodes.Icosphere005.geometry} material={materials.LP_wood} position={[-6.669, 4.989, -6.404]} rotation={[0, -0.193, 0]} scale={[0.414, 0.722, 0.414]} />
-      <mesh geometry={nodes.Icosphere006.geometry} material={materials.LP_wood} position={[-14.132, 2.855, -7.007]} rotation={[0, 0.784, 0]} scale={[0.258, 0.45, 0.258]} />
-      <mesh geometry={nodes.Icosphere007.geometry} material={materials.LP_wood} position={[-12.219, 2.855, -6.91]} rotation={[0, -0.633, 0]} scale={[0.258, 0.45, 0.258]} />
-      <mesh geometry={nodes.Icosphere008.geometry} material={materials.LP_wood} position={[-14.402, 2.577, -4.244]} rotation={[-Math.PI, 1.117, -Math.PI]} scale={[0.258, 0.45, 0.258]} />
-      <mesh geometry={nodes.Icosphere009.geometry} material={materials.LP_wood} position={[-13.689, 2.577, -6.022]} rotation={[0, 0.608, 0]} scale={[0.258, 0.45, 0.258]} />
-      <mesh geometry={nodes.Icosphere010.geometry} material={materials.LP_wood} position={[-12.98, 2.438, -6.579]} rotation={[0, -1.125, 0]} scale={[0.258, 0.45, 0.258]} />
-      <mesh geometry={nodes.Icosphere011.geometry} material={materials.LP_wood} position={[-13.706, 2.438, -4.807]} rotation={[Math.PI, -0.6, Math.PI]} scale={[0.258, 0.45, 0.258]} />
-      <mesh geometry={nodes.Icosphere012.geometry} material={materials.LP_wood} position={[0.933, 2.495, 1.958]} rotation={[0, 0.784, 0]} scale={[0.58, 1.012, 0.58]} />
-      <mesh geometry={nodes.Icosphere013.geometry} material={materials.LP_wood} position={[-5.635, 3.4, 4.512]} rotation={[-Math.PI, 0.725, -Math.PI]} scale={[0.307, 0.535, 0.307]} />
-      <mesh geometry={nodes.Icosphere014.geometry} material={materials.LP_wood} position={[-7.956, 3.4, 2.518]} rotation={[-Math.PI, 0.103, -Math.PI]} scale={[0.307, 0.535, 0.307]} />
-      <mesh geometry={nodes.Icosphere015.geometry} material={materials.LP_wood} position={[-7.145, 3.4, 7.704]} rotation={[Math.PI, -0.15, Math.PI]} scale={[0.307, 0.535, 0.307]} />
-      <mesh geometry={nodes.Icosphere016.geometry} material={materials.LP_wood} position={[-10.017, 3.4, 5.989]} rotation={[Math.PI, -0.15, Math.PI]} scale={[0.307, 0.535, 0.307]} />
-      <mesh geometry={nodes.Icosphere017.geometry} material={materials.LP_wood} position={[-9.842, 3.4, 3.129]} rotation={[0, 1.114, 0]} scale={[0.307, 0.535, 0.307]} />
-      <mesh geometry={nodes.Icosphere018.geometry} material={materials.LP_wood} position={[-6.098, 3.4, 2.858]} rotation={[0, 1.114, 0]} scale={[0.307, 0.535, 0.307]} />
-      <mesh geometry={nodes.Icosphere019.geometry} material={materials.LP_wood} position={[-8.522, 4.094, 4.53]} rotation={[-Math.PI, 0.911, -Math.PI]} scale={[0.307, 0.535, 0.307]} />
-      <mesh geometry={nodes.Icosphere020.geometry} material={materials.LP_wood} position={[-0.745, 1.673, 5.218]} rotation={[0, 0.784, 0]} scale={[0.223, 0.388, 0.223]} />
       <group position={[-0.906, 1.316, 3.579]} rotation={[-Math.PI, 1.49, -Math.PI]} scale={1.594}>
         <mesh geometry={nodes.Mesh_house_type03.geometry} material={materials['border.003']} />
         <mesh geometry={nodes.Mesh_house_type03_1.geometry} material={materials['window.003']} />

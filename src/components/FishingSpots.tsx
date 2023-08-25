@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useFrame } from "@react-three/fiber";
-import { useControls } from "../useLeva";
+import { useControls } from "leva";
 import { RigidBody, MeshCollider, BallCollider } from "@react-three/rapier";
 import { ECS } from "../state";
 import {

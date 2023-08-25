@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Quaternion, Euler, Vector3, Object3D } from "three";
 import { useState, useRef } from "react";
-import { useControls } from "../useLeva";
+import { useControls } from "leva";
 import { Suspense } from "react";
 import { RigidBody } from "@react-three/rapier";
 import type { RapierRigidBody } from "@react-three/rapier";
