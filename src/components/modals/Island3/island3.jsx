@@ -21,14 +21,15 @@ export function Modal({ setOpenModal }) {
           {/* </img> */}
         </div>
         <div className="title">
-          <h1>Title/Topic</h1>
+          <h1> Why test code?</h1>
         </div>
         <div className="body">
           <p>
-            Code coverage is a testing technique that informs what code is
-            tested and what is not tested. It is often represented as a
-            percentage of the number of lines of code that are tested versus the
-            entire codebase.
+            A test runs a piece of code and ensures that the system produces the
+            expected behavior given some input. Some tests check to see if a
+            database updates properly, others will make sure a UI component is
+            available. Why is testing is so important? Because bugs are
+            everywhere and testing helps you find and prevent them.
           </p>
         </div>
         <div className="footer">
@@ -41,7 +42,7 @@ export function Modal({ setOpenModal }) {
               <img id="icon" src="/assets/Icons/Forest-Gray.png"></img>
             </div>
             <div className="col-3">
-              <img id="icon" src="/assets/Icons/Igloo-Pink.png"></img>
+              <img id="icon" src="/assets/Icons/Igloo-Gray.png"></img>
             </div>
             <div className="col-4">
               <img id="icon" src="/assets/Icons/Jungle-Gray.png"></img>
@@ -50,7 +51,7 @@ export function Modal({ setOpenModal }) {
               <img id="icon" src="/assets/Icons/Nova-Scotia-Gray.png"></img>
             </div>
             <div className="col-6">
-              <img id="icon" src="/assets/Icons/Volcano-Gray.png"></img>
+              <img id="icon" src="/assets/Icons/Volcano-Pink.png"></img>
             </div>
             <div className="col-7">
               <img id="icon" src="/assets/Icons/Wind-Farm-Gray.png"></img>

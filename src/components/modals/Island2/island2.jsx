@@ -25,9 +25,17 @@ export function Modal({ setOpenModal }) {
         </div>
         <div className="body">
           <p>
-            Line Coverage - we take a look to see whether every line has been run in a test. <br></br>Branch Coverage - tests to see if every branch in a conditional is tested.
-            Path Coverage - is often considered a part of branch coverage calculations.<br></br>So which one is better? If you are limited to only calculating one, we recommend line coverage. Line coverage will at least cover the entire codebase. At Codecov, we aggregate both sets of data.
-            <br></br>If both line and branch coverage are provided, we will use the branch information and fill in unknown lines with the line coverage information to provide a more holistic view of your coverage.
+            Line Coverage - we take a look to see whether every line has been
+            run in a test. <br></br>Branch Coverage - tests to see if every
+            branch in a conditional is tested. Path Coverage - is often
+            considered a part of branch coverage calculations.<br></br>So which
+            one is better? If you are limited to only calculating one, we
+            recommend line coverage. Line coverage will at least cover the
+            entire codebase. At Codecov, we aggregate both sets of data.
+            <br></br>If both line and branch coverage are provided, we will use
+            the branch information and fill in unknown lines with the line
+            coverage information to provide a more holistic view of your
+            coverage.
           </p>
         </div>
         <div className="footer">
@@ -37,7 +45,7 @@ export function Modal({ setOpenModal }) {
               <img id="icon" src="assets/Icons/Beach-Gray.png"></img>
             </div>
             <div className="col-2">
-              <img id="icon" src="/assets/Icons/Forest-Pink.png"></img>
+              <img id="icon" src="/assets/Icons/Forest-Gray.png"></img>
             </div>
             <div className="col-3">
               <img id="icon" src="/assets/Icons/Igloo-Gray.png"></img>
@@ -52,7 +60,7 @@ export function Modal({ setOpenModal }) {
               <img id="icon" src="/assets/Icons/Volcano-Gray.png"></img>
             </div>
             <div className="col-7">
-              <img id="icon" src="/assets/Icons/Wind-Farm-Gray.png"></img>
+              <img id="icon" src="/assets/Icons/Wind-Farm-Pink.png"></img>
             </div>
           </div>
         </div>

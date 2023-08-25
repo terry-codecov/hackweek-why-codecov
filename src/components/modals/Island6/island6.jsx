@@ -1,7 +1,7 @@
 import React from "react";
 import "../island.css";
 
-function Modal({ setOpenModal }) {
+export function Modal({ setOpenModal }) {
   return (
     <div className="modalBackground">
       <div className="modalContainer">
@@ -25,7 +25,15 @@ function Modal({ setOpenModal }) {
         </div>
         <div className="body">
           <p>
-          Striving for 100% code coverage is debated among developers. While it ensures every line of code has associated tests, achieving it can be exhaustive and doesn’t guarantee bug-free code. Instead, focus on building a testing culture: start by setting up coverage tools, share coverage data with commits, gradually raise coverage standards per commit, targeting 30% and later 80% overall coverage. Hitting 100% is optional but not necessary; emphasis should be on test quality over sheer coverage. This approach balances meaningful testing and code quality.
+            Striving for 100% code coverage is debated among developers. While
+            it ensures every line of code has associated tests, achieving it can
+            be exhaustive and doesn’t guarantee bug-free code. Instead, focus on
+            building a testing culture: start by setting up coverage tools,
+            share coverage data with commits, gradually raise coverage standards
+            per commit, targeting 30% and later 80% overall coverage. Hitting
+            100% is optional but not necessary; emphasis should be on test
+            quality over sheer coverage. This approach balances meaningful
+            testing and code quality.
           </p>
         </div>
         <div className="footer">
@@ -44,10 +52,10 @@ function Modal({ setOpenModal }) {
               <img id="icon" src="/assets/Icons/Jungle-Gray.png"></img>
             </div>
             <div className="col-5">
-              <img id="icon" src="/assets/Icons/Nova-Scotia-Gray.png"></img>
+              <img id="icon" src="/assets/Icons/Nova-Scotia-Pink.png"></img>
             </div>
             <div className="col-6">
-              <img id="icon" src="/assets/Icons/Volcano-Pink.png"></img>
+              <img id="icon" src="/assets/Icons/Volcano-Gray.png"></img>
             </div>
             <div className="col-7">
               <img id="icon" src="/assets/Icons/Wind-Farm-Gray.png"></img>

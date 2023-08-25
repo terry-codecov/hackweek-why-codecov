@@ -25,7 +25,13 @@ export function Modal({ setOpenModal }) {
         </div>
         <div className="body">
           <p>
-          Getting started with code coverage usually requires your codebase to have tests. If you don’t have any tests, then you will have 0% code coverage. Most languages have their own tools to calculate coverage when a test suite is run. After you have added tests and decided on what tool to use, you can begin to collect coverage metrics.<br></br>Using a code coverage as a service tool, like Codecov, can help get that data back in front of your developers.
+            Getting started with code coverage usually requires your codebase to
+            have tests. If you don’t have any tests, then you will have 0% code
+            coverage. Most languages have their own tools to calculate coverage
+            when a test suite is run. After you have added tests and decided on
+            what tool to use, you can begin to collect coverage metrics.
+            <br></br>Using a code coverage as a service tool, like Codecov, can
+            help get that data back in front of your developers.
           </p>
         </div>
         <div className="footer">
@@ -38,13 +44,13 @@ export function Modal({ setOpenModal }) {
               <img id="icon" src="/assets/Icons/Forest-Gray.png"></img>
             </div>
             <div className="col-3">
-              <img id="icon" src="/assets/Icons/Igloo-Gray.png"></img>
+              <img id="icon" src="/assets/Icons/Igloo-Pink.png"></img>
             </div>
             <div className="col-4">
               <img id="icon" src="/assets/Icons/Jungle-Gray.png"></img>
             </div>
             <div className="col-5">
-              <img id="icon" src="/assets/Icons/Nova-Scotia-Pink.png"></img>
+              <img id="icon" src="/assets/Icons/Nova-Scotia-Gray.png"></img>
             </div>
             <div className="col-6">
               <img id="icon" src="/assets/Icons/Volcano-Gray.png"></img>

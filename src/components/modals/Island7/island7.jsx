@@ -1,7 +1,7 @@
 import React from "react";
 import "../island.css";
 
-function Modal({ setOpenModal }) {
+export function Modal({ setOpenModal }) {
   return (
     <div className="modalBackground">
       <div className="modalContainer">
@@ -21,11 +21,19 @@ function Modal({ setOpenModal }) {
           {/* </img> */}
         </div>
         <div className="title">
-          <h1>What is Code Coverage as a Service?</h1>
+          <h1>
+            Path Coverage - is often considered a part of branch coverage
+            calculations.
+          </h1>
         </div>
         <div className="body">
           <p>
-          Code coverage as a service integrates coverage tool data into developer workflows, aiding in building a testing culture. For instance, Codecov offers features like merging coverage reports from various languages, overlaying coverage on source code, status checks on pull requests for coverage standards, customizable PR comments for coverage insights, and flags to focus coverage. This service ensures thorough testing and code quality improvement.
+            So which one is better? If you are limited to only calculating one,
+            we recommend line coverage. Line coverage will at least cover the
+            entire codebase. At Codecov, we aggregate both sets of data. If both
+            line and branch coverage are provided, we will use the branch
+            information and fill in unknown lines with the line coverage
+            information to provide a more holistic view of your coverage.
           </p>
         </div>
         <div className="footer">
@@ -41,7 +49,7 @@ function Modal({ setOpenModal }) {
               <img id="icon" src="/assets/Icons/Igloo-Gray.png"></img>
             </div>
             <div className="col-4">
-              <img id="icon" src="/assets/Icons/Jungle-Gray.png"></img>
+              <img id="icon" src="/assets/Icons/Jungle-Pink.png"></img>
             </div>
             <div className="col-5">
               <img id="icon" src="/assets/Icons/Nova-Scotia-Gray.png"></img>
@@ -50,7 +58,7 @@ function Modal({ setOpenModal }) {
               <img id="icon" src="/assets/Icons/Volcano-Gray.png"></img>
             </div>
             <div className="col-7">
-              <img id="icon" src="/assets/Icons/Wind-Farm-Pink.png"></img>
+              <img id="icon" src="/assets/Icons/Wind-Farm-Gray.png"></img>
             </div>
           </div>
         </div>

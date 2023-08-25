@@ -25,7 +25,7 @@ const Player = () => {
   const [subscribeKeys, getKeys] = useKeyboardControls();
 
   const { speed, camera } = useControls("player", {
-    speed: { value: 1490, min: 500, max: 2000, step: 10 },
+    speed: { value: 1790, min: 500, max: 2000, step: 10 },
     camera: false,
   });
 

@@ -25,9 +25,17 @@ export function Modal({ setOpenModal }) {
         </div>
         <div className="body">
           <p>
-            To calculate code coverage, counters are added to the code before running it in a test suite. These counters keep track of executed lines, branches, and functions, storing this information in a global object called coverage.
-            <br></br>This process, known as instrumentation, helps monitor which lines of code are executed during tests. The provided Python program demonstrates this with counters added to the coverage object for each line, branch, and function.
-            <br></br>This approach applies to larger projects as well, where additional meta information may be included in the format, while still following the same underlying methodology.
+            To calculate code coverage, counters are added to the code before
+            running it in a test suite. These counters keep track of executed
+            lines, branches, and functions, storing this information in a global
+            object called coverage.
+            <br></br>This process, known as instrumentation, helps monitor which
+            lines of code are executed during tests. The provided Python program
+            demonstrates this with counters added to the coverage object for
+            each line, branch, and function.
+            <br></br>This approach applies to larger projects as well, where
+            additional meta information may be included in the format, while
+            still following the same underlying methodology.
           </p>
         </div>
         <div className="footer">
@@ -37,13 +45,13 @@ export function Modal({ setOpenModal }) {
               <img id="icon" src="assets/Icons/Beach-Gray.png"></img>
             </div>
             <div className="col-2">
-              <img id="icon" src="/assets/Icons/Forest-Gray.png"></img>
+              <img id="icon" src="/assets/Icons/Forest-Pink.png"></img>
             </div>
             <div className="col-3">
               <img id="icon" src="/assets/Icons/Igloo-Gray.png"></img>
             </div>
             <div className="col-4">
-              <img id="icon" src="/assets/Icons/Jungle-Pink.png"></img>
+              <img id="icon" src="/assets/Icons/Jungle-Gray.png"></img>
             </div>
             <div className="col-5">
               <img id="icon" src="/assets/Icons/Nova-Scotia-Gray.png"></img>
